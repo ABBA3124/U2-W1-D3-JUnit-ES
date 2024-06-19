@@ -75,7 +75,9 @@ class U2W1D3ApplicationTests {
     })
 
 
-    //6.08
+    //6.08 Margherita
+    //6.77 Hawaiian
+    //5.29 Salami
     public void testPrezzoDiOgniPizza(String nomePizza, double prezzoCheMiAspetto) throws IllegalAccessException {
 
         Topping mozzarella = new Topping("Mozzarella", 92, 0.69);
