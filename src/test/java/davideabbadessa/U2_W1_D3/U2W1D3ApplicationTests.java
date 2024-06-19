@@ -69,13 +69,13 @@ class U2W1D3ApplicationTests {
     //test parametrico
     @ParameterizedTest
     @CsvSource({
-            "Margherita,6.08",
+            "Margherita, 4.30",
             "Hawaiian, 6.77",
             "Salami, 5.29"
     })
 
 
-    //6.08 Margherita
+    //4.30 Margherita
     //6.77 Hawaiian
     //5.29 Salami
     public void testPrezzoDiOgniPizza(String nomePizza, double prezzoCheMiAspetto) throws IllegalAccessException {
@@ -89,17 +89,33 @@ class U2W1D3ApplicationTests {
         Pizza pizza;
         switch (nomePizza) {
             case "Margherita":
-                pizza = new Pizza("Margherita", Arrays.asList(prosciutto, ananas), false);
-                System.out.println("Nome di questa pizza: " + pizza.getName() + " --> Il prezzo giusto è: " + pizza.getPrice());
+                pizza = new Pizza("Margherita", Arrays.asList(pomodoro), false);
+                if (pizza.getPrice() == prezzoCheMiAspetto) {
+                    System.out.println(" ✔️ " + "Hai inserito: " + pizza.getPrice() + " Bravo Prezzo corretto, il test è andato a buon fine !");
+                } else {
+                    System.out.println(" ❌ " + "Hai inserito questo prezzo: " + prezzoCheMiAspetto + " Il prezzo di questa pizza:  " + pizza.getName() + " --> è: " + pizza.getPrice());
+
+                }
                 break;
             case "Hawaiian":
                 pizza = new Pizza("Hawaiian", Arrays.asList(pomodoro, ananas, prosciutto, mozzarella), false);
-                System.out.println("Nome di questa pizza: " + pizza.getName() + " --> Il prezzo giusto è: " + pizza.getPrice());
+                if (pizza.getPrice() == prezzoCheMiAspetto) {
+                    System.out.println(" ✔️ " + "Hai inserito: " + pizza.getPrice() + " Bravo Prezzo corretto, il test è andato a buon fine !");
+                } else {
+                    System.out.println(" ❌ " + "Hai inserito questo prezzo: " + prezzoCheMiAspetto + " Il prezzo di questa pizza:  " + pizza.getName() + " --> è: " + pizza.getPrice());
+
+                }
                 break;
             case "Salami":
                 pizza = new Pizza("Salami", Arrays.asList(salame, pomodoro), false);
-                System.out.println("Nome di questa pizza: " + pizza.getName() + " --> Il prezzo giusto è: " + pizza.getPrice());
+                if (pizza.getPrice() == prezzoCheMiAspetto) {
+                    System.out.println(" ✔️ " + "Hai inserito: " + pizza.getPrice() + " Bravo Prezzo corretto, il test è andato a buon fine !");
+                } else {
+                    System.out.println(" ❌ " + "Hai inserito questo prezzo: " + prezzoCheMiAspetto + " Il prezzo di questa pizza:  " + pizza.getName() + " --> è: " + pizza.getPrice());
+
+                }
                 break;
+
             default:
                 throw new IllegalAccessException("nome pizza non valido: " + nomePizza);
 
